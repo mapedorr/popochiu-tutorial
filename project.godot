@@ -8,6 +8,94 @@
 
 config_version=4
 
+_global_script_classes=[ {
+"base": "Area2D",
+"class": "PopochiuCharacter",
+"language": "GDScript",
+"path": "res://addons/Popochiu/Engine/Objects/Character/PopochiuCharacter.gd"
+}, {
+"base": "Resource",
+"class": "PopochiuCharacterData",
+"language": "GDScript",
+"path": "res://addons/Popochiu/Engine/Objects/Character/PopochiuCharacterData.gd"
+}, {
+"base": "Resource",
+"class": "PopochiuDialog",
+"language": "GDScript",
+"path": "res://addons/Popochiu/Engine/Objects/Dialog/PopochiuDialog.gd"
+}, {
+"base": "PanelContainer",
+"class": "PopochiuGroup",
+"language": "GDScript",
+"path": "res://addons/Popochiu/Editor/MainDock/PopochiuGroup/PopochiuGroup.gd"
+}, {
+"base": "Area2D",
+"class": "PopochiuHotspot",
+"language": "GDScript",
+"path": "res://addons/Popochiu/Engine/Objects/Hotspot/PopochiuHotspot.gd"
+}, {
+"base": "TextureRect",
+"class": "PopochiuInventoryItem",
+"language": "GDScript",
+"path": "res://addons/Popochiu/Engine/Objects/InventoryItem/PopochiuInventoryItem.gd"
+}, {
+"base": "Resource",
+"class": "PopochiuInventoryItemData",
+"language": "GDScript",
+"path": "res://addons/Popochiu/Engine/Objects/InventoryItem/PopochiuInventoryItemData.gd"
+}, {
+"base": "Area2D",
+"class": "PopochiuProp",
+"language": "GDScript",
+"path": "res://addons/Popochiu/Engine/Objects/Prop/PopochiuProp.gd"
+}, {
+"base": "Area2D",
+"class": "PopochiuRegion",
+"language": "GDScript",
+"path": "res://addons/Popochiu/Engine/Objects/Region/PopochiuRegion.gd"
+}, {
+"base": "Node",
+"class": "PopochiuResources",
+"language": "GDScript",
+"path": "res://addons/Popochiu/PopochiuResources.gd"
+}, {
+"base": "YSort",
+"class": "PopochiuRoom",
+"language": "GDScript",
+"path": "res://addons/Popochiu/Engine/Objects/Room/PopochiuRoom.gd"
+}, {
+"base": "Resource",
+"class": "PopochiuRoomData",
+"language": "GDScript",
+"path": "res://addons/Popochiu/Engine/Objects/Room/PopochiuRoomData.gd"
+}, {
+"base": "Resource",
+"class": "PopochiuSettings",
+"language": "GDScript",
+"path": "res://addons/Popochiu/Engine/Objects/PopochiuSettings.gd"
+}, {
+"base": "CanvasLayer",
+"class": "TransitionLayer",
+"language": "GDScript",
+"path": "res://addons/Popochiu/Engine/Objects/TransitionLayer/TransitionLayer.gd"
+} ]
+_global_script_class_icons={
+"PopochiuCharacter": "res://addons/Popochiu/icons/character.png",
+"PopochiuCharacterData": "res://addons/Popochiu/icons/character.png",
+"PopochiuDialog": "res://addons/Popochiu/icons/dialog.png",
+"PopochiuGroup": "res://addons/Popochiu/Editor/MainDock/PopochiuGroup/popochiu_group.svg",
+"PopochiuHotspot": "res://addons/Popochiu/icons/hotspot.png",
+"PopochiuInventoryItem": "res://addons/Popochiu/icons/inventory_item.png",
+"PopochiuInventoryItemData": "res://addons/Popochiu/icons/inventory_item.png",
+"PopochiuProp": "res://addons/Popochiu/icons/prop.png",
+"PopochiuRegion": "res://addons/Popochiu/icons/region.png",
+"PopochiuResources": "",
+"PopochiuRoom": "res://addons/Popochiu/icons/room.png",
+"PopochiuRoomData": "res://addons/Popochiu/icons/room.png",
+"PopochiuSettings": "",
+"TransitionLayer": ""
+}
+
 [application]
 
 config/name="popochiu-tutorial"
