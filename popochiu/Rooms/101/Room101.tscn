@@ -1,7 +1,7 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://popochiu/Rooms/101/Room101.gd" type="Script" id=1]
-[ext_resource path="res://addons/Popochiu/Engine/Objects/Prop/PopochiuProp.gd" type="Script" id=2]
+[ext_resource path="res://popochiu/Rooms/101/Props/ToyCar/PropToyCar.gd" type="Script" id=2]
 [ext_resource path="res://addons/Popochiu/Engine/Objects/Prop/PopochiuProp.tscn" type="PackedScene" id=3]
 [ext_resource path="res://popochiu/Rooms/101/Props/_NoInteraction/background.png" type="Texture" id=4]
 [ext_resource path="res://popochiu/Rooms/101/WalkableAreas/Floor/WalkableAreaFloor.gd" type="Script" id=5]
@@ -10,6 +10,7 @@
 [ext_resource path="res://popochiu/Rooms/101/Props/_NoInteraction/table.png" type="Texture" id=8]
 [ext_resource path="res://popochiu/Rooms/101/Hotspots/Window/HotspotWindow.gd" type="Script" id=9]
 [ext_resource path="res://addons/Popochiu/Engine/Objects/Hotspot/PopochiuHotspot.tscn" type="PackedScene" id=10]
+[ext_resource path="res://popochiu/Rooms/101/Props/ToyCar/toy_car.png" type="Texture" id=11]
 
 [sub_resource type="NavigationPolygon" id=1]
 vertices = PoolVector2Array( 80, 13, 106, 27, 111, 55, 53, 70, 23, 52, 18, 33, -51, 70, -6, 58, -34, 46, -14, 7, -26, 32, -57, 7, -87, 14, -107, 54, -108, 30 )
@@ -46,12 +47,8 @@ baseline = -90
 cursor = 1
 texture = ExtResource( 4 )
 
-[node name="Table" type="Area2D" parent="Props" instance=ExtResource( 3 )]
+[node name="Table" parent="Props" instance=ExtResource( 3 )]
 position = Vector2( 155, 131 )
-script = ExtResource( 2 )
-__meta__ = {
-"_editor_description_": ""
-}
 script_name = "Table"
 description = "Table"
 clickable = false
@@ -59,9 +56,25 @@ baseline = 4
 cursor = 1
 texture = ExtResource( 8 )
 
+[node name="ToyCar" type="Area2D" parent="Props" instance=ExtResource( 3 )]
+position = Vector2( 92, 136 )
+script = ExtResource( 2 )
+__meta__ = {
+"_editor_description_": ""
+}
+script_name = "ToyCar"
+description = "ToyCar"
+walk_to_point = Vector2( 23, 0 )
+cursor = 1
+texture = ExtResource( 11 )
+link_to_item = "ToyCar"
+
+[node name="InteractionPolygon" type="CollisionPolygon2D" parent="Props/ToyCar"]
+polygon = PoolVector2Array( -9, 3, -6, -5, 3, -6, 8, 0, 8, 4, -1, 7 )
+
 [node name="Hotspots" type="Node2D" parent="."]
 
-[node name="Window" type="Area2D" parent="Hotspots" instance=ExtResource( 10 )]
+[node name="Window" parent="Hotspots" instance=ExtResource( 10 )]
 position = Vector2( 153, 62 )
 script = ExtResource( 9 )
 script_name = "Window"
