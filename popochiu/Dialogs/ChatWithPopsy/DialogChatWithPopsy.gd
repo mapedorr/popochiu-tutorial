@@ -23,8 +23,18 @@ func option_selected(opt: PopochiuDialogOption) -> void:
 	match opt.id:
 		'Opt1':
 			yield(E.run([
-				"Popsy: I'm fine, and you?",
-				'Player: Same'
+				"Popsy: I'm sad",
+				'Player: Why?',
+				"Popsy: Because I'm hungry"
+			]), 'completed')
+			
+			opt.turn_off()
+			turn_on_options(['Eat'])
+		'Eat':
+			yield(E.run([
+				"Popsy: I want a fruit",
+				'Player: Which fruit?',
+				"Popsy: An apple from the tree outside"
 			]), 'completed')
 		'Exit':
 			# By default close the dialog. Options won't show after calling
