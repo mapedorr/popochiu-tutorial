@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://popochiu/Rooms/101/Room101.gd" type="Script" id=1]
 [ext_resource path="res://popochiu/Rooms/101/Props/ToyCar/PropToyCar.gd" type="Script" id=2]
@@ -11,6 +11,7 @@
 [ext_resource path="res://popochiu/Rooms/101/Hotspots/Window/HotspotWindow.gd" type="Script" id=9]
 [ext_resource path="res://addons/Popochiu/Engine/Objects/Hotspot/PopochiuHotspot.tscn" type="PackedScene" id=10]
 [ext_resource path="res://popochiu/Rooms/101/Props/ToyCar/toy_car.png" type="Texture" id=11]
+[ext_resource path="res://popochiu/Characters/Popsy/CharacterPopsy.tscn" type="PackedScene" id=12]
 
 [sub_resource type="NavigationPolygon" id=1]
 vertices = PoolVector2Array( 80, 13, 106, 27, 111, 55, 53, 70, 23, 52, 18, 33, -51, 70, -6, 58, -34, 46, -14, 7, -26, 32, -57, 7, -87, 14, -107, 54, -108, 30 )
@@ -56,12 +57,9 @@ baseline = 4
 cursor = 1
 texture = ExtResource( 8 )
 
-[node name="ToyCar" type="Area2D" parent="Props" instance=ExtResource( 3 )]
+[node name="ToyCar" parent="Props" instance=ExtResource( 3 )]
 position = Vector2( 92, 136 )
 script = ExtResource( 2 )
-__meta__ = {
-"_editor_description_": ""
-}
 script_name = "ToyCar"
 description = "ToyCar"
 walk_to_point = Vector2( 23, 0 )
@@ -95,3 +93,6 @@ sort_enabled = false
 
 [node name="CharacterGoddiu *" parent="Characters" instance=ExtResource( 7 )]
 position = Vector2( 109, 107 )
+
+[node name="CharacterPopsy *" parent="Characters" instance=ExtResource( 12 )]
+position = Vector2( 229, 111 )
