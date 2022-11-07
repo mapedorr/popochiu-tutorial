@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://popochiu/Rooms/101/Room101.gd" type="Script" id=1]
 [ext_resource path="res://addons/Popochiu/Engine/Objects/Prop/PopochiuProp.gd" type="Script" id=2]
@@ -7,11 +7,14 @@
 [ext_resource path="res://popochiu/Rooms/101/WalkableAreas/Floor/WalkableAreaFloor.gd" type="Script" id=5]
 [ext_resource path="res://addons/Popochiu/Engine/Objects/WalkableArea/PopochiuWalkableArea.tscn" type="PackedScene" id=6]
 [ext_resource path="res://popochiu/Characters/Goddiu/CharacterGoddiu.tscn" type="PackedScene" id=7]
+[ext_resource path="res://popochiu/Rooms/101/Props/_NoInteraction/table.png" type="Texture" id=8]
+[ext_resource path="res://popochiu/Rooms/101/Hotspots/Window/HotspotWindow.gd" type="Script" id=9]
+[ext_resource path="res://addons/Popochiu/Engine/Objects/Hotspot/PopochiuHotspot.tscn" type="PackedScene" id=10]
 
 [sub_resource type="NavigationPolygon" id=1]
-vertices = PoolVector2Array( -87, 14, -57, 7, -14, 7, 80, 13, 106, 27, 111, 55, 53, 70, -51, 70, -107, 54, -108, 30 )
-polygons = [ PoolIntArray( 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 ) ]
-outlines = [ PoolVector2Array( -87, 14, -57, 7, -14, 7, 80, 13, 106, 27, 111, 55, 53, 70, -51, 70, -107, 54, -108, 30 ) ]
+vertices = PoolVector2Array( 80, 13, 106, 27, 111, 55, 53, 70, 23, 52, 18, 33, -51, 70, -6, 58, -34, 46, -14, 7, -26, 32, -57, 7, -87, 14, -107, 54, -108, 30 )
+polygons = [ PoolIntArray( 0, 1, 2, 3, 4, 5 ), PoolIntArray( 4, 3, 6, 7 ), PoolIntArray( 8, 7, 6 ), PoolIntArray( 9, 0, 5, 10, 11 ), PoolIntArray( 12, 11, 10, 8, 6, 13, 14 ) ]
+outlines = [ PoolVector2Array( -87, 14, -57, 7, -14, 7, 80, 13, 106, 27, 111, 55, 53, 70, -51, 70, -107, 54, -108, 30 ), PoolVector2Array( -34, 46, -26, 32, 18, 33, 23, 52, -6, 58 ) ]
 
 [node name="Room101" type="YSort"]
 sort_enabled = false
@@ -20,7 +23,7 @@ script_name = "101"
 
 [node name="WalkableAreas" type="Node2D" parent="."]
 
-[node name="Floor" type="Navigation2D" parent="WalkableAreas" instance=ExtResource( 6 )]
+[node name="Floor" parent="WalkableAreas" instance=ExtResource( 6 )]
 position = Vector2( 160, 90 )
 script = ExtResource( 5 )
 script_name = "Floor"
@@ -33,13 +36,9 @@ navpoly = SubResource( 1 )
 [node name="Props" type="YSort" parent="."]
 sort_enabled = false
 
-[node name="Background" type="Area2D" parent="Props" instance=ExtResource( 3 )]
+[node name="Background" parent="Props" instance=ExtResource( 3 )]
 position = Vector2( 160, 90 )
 z_index = -1
-script = ExtResource( 2 )
-__meta__ = {
-"_editor_description_": ""
-}
 script_name = "Background"
 description = "Background"
 clickable = false
@@ -47,7 +46,32 @@ baseline = -90
 cursor = 1
 texture = ExtResource( 4 )
 
+[node name="Table" type="Area2D" parent="Props" instance=ExtResource( 3 )]
+position = Vector2( 155, 131 )
+script = ExtResource( 2 )
+__meta__ = {
+"_editor_description_": ""
+}
+script_name = "Table"
+description = "Table"
+clickable = false
+baseline = 4
+cursor = 1
+texture = ExtResource( 8 )
+
 [node name="Hotspots" type="Node2D" parent="."]
+
+[node name="Window" type="Area2D" parent="Hotspots" instance=ExtResource( 10 )]
+position = Vector2( 153, 62 )
+script = ExtResource( 9 )
+script_name = "Window"
+description = "Window"
+walk_to_point = Vector2( 20, 43 )
+cursor = 1
+
+[node name="InteractionPolygon" type="CollisionPolygon2D" parent="Hotspots/Window"]
+modulate = Color( 0, 0, 1, 1 )
+polygon = PoolVector2Array( -26, -3, -19, -19, 0, -24, 19, -14, 19, 8, 3, 20, -15, 15 )
 
 [node name="Regions" type="Node2D" parent="."]
 
