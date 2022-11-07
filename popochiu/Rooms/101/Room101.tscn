@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://popochiu/Rooms/101/Room101.gd" type="Script" id=1]
 [ext_resource path="res://popochiu/Rooms/101/Props/ToyCar/PropToyCar.gd" type="Script" id=2]
@@ -12,6 +12,7 @@
 [ext_resource path="res://addons/Popochiu/Engine/Objects/Hotspot/PopochiuHotspot.tscn" type="PackedScene" id=10]
 [ext_resource path="res://popochiu/Rooms/101/Props/ToyCar/toy_car.png" type="Texture" id=11]
 [ext_resource path="res://popochiu/Characters/Popsy/CharacterPopsy.tscn" type="PackedScene" id=12]
+[ext_resource path="res://popochiu/Rooms/101/Hotspots/Door/HotspotDoor.gd" type="Script" id=13]
 
 [sub_resource type="NavigationPolygon" id=1]
 vertices = PoolVector2Array( 80, 13, 106, 27, 111, 55, 53, 70, 23, 52, 18, 33, -51, 70, -6, 58, -34, 46, -14, 7, -26, 32, -57, 7, -87, 14, -107, 54, -108, 30 )
@@ -83,6 +84,18 @@ cursor = 1
 [node name="InteractionPolygon" type="CollisionPolygon2D" parent="Hotspots/Window"]
 modulate = Color( 0, 0, 1, 1 )
 polygon = PoolVector2Array( -26, -3, -19, -19, 0, -24, 19, -14, 19, 8, 3, 20, -15, 15 )
+
+[node name="Door" type="Area2D" parent="Hotspots" instance=ExtResource( 10 )]
+position = Vector2( 98, 75 )
+script = ExtResource( 13 )
+script_name = "Door"
+description = "Door"
+walk_to_point = Vector2( 11, 31 )
+cursor = 1
+
+[node name="InteractionPolygon" type="CollisionPolygon2D" parent="Hotspots/Door"]
+modulate = Color( 0, 0, 1, 1 )
+polygon = PoolVector2Array( -18, 24, -19, -10, -12, -25, 9, -24, 18, -17, 16, 18, -1, 21 )
 
 [node name="Regions" type="Node2D" parent="."]
 
