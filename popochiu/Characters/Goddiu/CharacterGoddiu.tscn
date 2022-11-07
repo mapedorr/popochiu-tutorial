@@ -13,15 +13,22 @@ description = "Goddiu"
 clickable = false
 cursor = 8
 flips_when = 2
+voices = [ {
+"cue": "vo_goddiu",
+"emotion": "",
+"variations": 3
+} ]
 
 [node name="InteractionPolygon" type="CollisionPolygon2D" parent="."]
 polygon = PoolVector2Array( -10, -10, 10, -10, 10, 10, -10, 10 )
 
 [node name="BaselineHelper" type="Line2D" parent="."]
+visible = false
 points = PoolVector2Array( -10000, 0, 10000, 0 )
 width = 1.0
 
 [node name="WalkToHelper" type="Position2D" parent="."]
+visible = false
 __meta__ = {
 "_edit_group_": true
 }
@@ -38,4 +45,5 @@ position = Vector2( 0, -27 )
 texture = ExtResource( 2 )
 
 [node name="DialogPos" type="Position2D" parent="."]
+visible = false
 position = Vector2( 0, -53 )

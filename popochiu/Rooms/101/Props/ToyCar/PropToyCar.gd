@@ -16,6 +16,7 @@ func on_interact() -> void:
 		C.walk_to_clicked(),
 		C.face_clicked(),
 		'Player: I will take this with me',
+		A.play('sfx_toy_car'),
 		I.add_item('ToyCar')
 	])
 
